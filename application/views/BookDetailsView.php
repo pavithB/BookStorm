@@ -9,7 +9,7 @@
         <!--Grid column-->
         <div style="text-align: center; padding-top: 5%;" class="col-md-6 mb-4">
 
-          <img src="<?php echo base_url(); ?>application/libraries/img/bookcovers/<?php echo $bookDetails->bookID; ?>.jpg"" class="img-fluid" alt="">
+          <img src="<?php echo base_url(); ?>application/libraries/img/bookcovers/<?php echo $bookDetails->bookID; ?>.jpg" class="img-fluid" alt="">
 
         </div>
         <!--Grid column-->
@@ -92,10 +92,9 @@
         <!--Grid column-->
         <div class="col-md-6 text-center">
 
-          <h4 class="my-4 h4">Additional information</h4>
+          <h4 class="my-4 h4">Recomendation</h4>
 
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus suscipit modi sapiente illo soluta odit voluptates,
-            quibusdam officia. Neque quibusdam quas a quis porro? Molestias illo neque eum in laborum.</p>
+          <p>users who look this book also view theese books</p>
 
         </div>
         <!--Grid column-->
@@ -106,29 +105,19 @@
       <!--Grid row-->
       <div class="row wow fadeIn">
 
-        <!--Grid column-->
-        <div class="col-lg-4 col-md-12 mb-4">
+        <?php foreach($recomendBook as $recomendation) { ?>
 
-          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/11.jpg" class="img-fluid" alt="">
+          <?php if(!($recomendation->bookID === $currentBook)){ ?>
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-12 mb-4">
 
-        </div>
-        <!--Grid column-->
+            <img src="<?php echo base_url(); ?>application/libraries/img/bookcovers/<?php echo $recomendation->bookID; ?>.jpg" class="img-fluid" alt="">
 
-        <!--Grid column-->
-        <div class="col-lg-4 col-md-6 mb-4">
+            </div>
+            <!--Grid column-->
 
-          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/12.jpg" class="img-fluid" alt="">
-
-        </div>
-        <!--Grid column-->
-
-        <!--Grid column-->
-        <div class="col-lg-4 col-md-6 mb-4">
-
-          <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/13.jpg" class="img-fluid" alt="">
-
-        </div>
-        <!--Grid column-->
+            <?php  } ?>
+        <?php  } ?>
 
       </div>
       <!--Grid row-->
