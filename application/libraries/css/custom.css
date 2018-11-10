@@ -1,0 +1,55 @@
+.view {
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+}
+
+.view img, .view video {
+  position: relative;
+  display: block;
+}
+
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.card {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+}
+
+.collection-card .stripe.dark {
+  background-color: rgba(0,0,0,.7);
+}
+.collection-card .stripe {
+  position: absolute;
+  bottom: 3rem;
+  width: 100%;
+  text-align: center;
+  padding: 1.2rem;
+}
+
+.collection-card .stripe.dark a p {
+  color: #eee;
+}
+
+.collection-card .stripe a p {
+  padding: 0;
+  margin: 0;
+  letter-spacing: .25rem;
+}
+
