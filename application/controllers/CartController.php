@@ -29,6 +29,30 @@ class CartController extends CI_Controller{
 
     }
 
+    public function updateQty($option, $cartRow){
+
+        $newQty = 0;
+        if($option === 'increment'){
+            $newQty = $this->cart->get_item($cartRow)['qty'] + 1;
+        }else if($option === 'decrement'){
+            $newQty = $this->cart->get_item($cartRow)['qty'] - 1;
+        }else if($option === 'remove'){
+            $newQty = 0;
+        }
+
+        $data = array(
+            'rowid' => $cartRow,
+            'qty'   => $newQty
+    );
+    
+    $this->cart->update($data);
+
+
+    $this->load->view('partials/header');
+    $this->load->view('CartView');
+    $this->load->view('partials/footer');
+    }
+
     // echo $this->cart->total_items();
 
 

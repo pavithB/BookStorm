@@ -51,28 +51,45 @@
                   <p class="text-muted">show category</p>
                 </td>
                 <td></td>
-                <td><?php echo $book['price']; ?></td>
+                <td>$<?php echo $this->cart->format_number($book['price']); ?></td>
                 <td class="text-center text-md-left">
                   <span class="qty"><?php echo $book['qty']; ?> </span>
-                  <div class="btn-group radio-group ml-2" data-toggle="buttons">
-                    <label class="btn btn-sm btn-primary btn-rounded waves-effect waves-light">
-                      <input type="radio" name="options" id="option1">—
-                    </label>
-                    <label class="btn btn-sm btn-primary btn-rounded waves-effect waves-light">
-                      <input type="radio" name="options" id="option2">+
-                    </label>
+                  <div class="btn-group ml-2">
+                    <button onclick="window.location='<?php echo base_url() ?>CartController/updateQty/decrement/<?php echo $book['rowid']; ?>'" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light">—</button>
+                    <button onclick="window.location='<?php echo base_url() ?>CartController/updateQty/increment/<?php echo $book['rowid']; ?>'" class="btn btn-sm btn-primary btn-rounded waves-effect waves-light">+</button>
                   </div>
                 </td>
                 <td class="font-weight-bold">
-                  <strong><?php echo $book['price']; ?></strong>
+                  <strong>$<?php echo $this->cart->format_number($book['subtotal']); ?></strong>
                 </td>
                 <td>
-                  <button type="button" class="btn btn-sm btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="" data-original-title="Remove item">X
+                  <button onclick="window.location='<?php echo base_url() ?>CartController/updateQty/remove/<?php echo $book['rowid']; ?>'" type="button" class="btn btn-sm btn-primary waves-effect waves-light" data-toggle="tooltip" data-placement="top" title="" data-original-title="Remove item">X
                   </button>
                 </td>
               </tr>
               <?php } ?>
               <!-- /.item loop -->
+              
+              <!-- Fourth row -->
+              <tr>
+                <td colspan="3"></td>
+                <td>
+                  <h4 class="mt-2">
+                    <strong>Total</strong>
+                  </h4>
+                </td>
+                <td class="text-right">
+                  <h4 class="mt-2">
+                    <strong>$<?php echo $this->cart->format_number($this->cart->total()); ?></strong>
+                  </h4>
+                </td>
+                <td colspan="3" class="text-right">
+                  <button type="button" class="btn btn-primary btn-rounded waves-effect waves-light">Complete purchase
+                    <i class="fa fa-angle-right right"></i>
+                  </button>
+                </td>
+              </tr>
+              <!-- Fourth row -->
 
             </tbody>
             <!-- /.Table body -->
@@ -86,5 +103,4 @@
 
     </div>
     <!-- /Main Container -->
-
   </main>
