@@ -21,7 +21,7 @@
           <div class="p-4">
 
             <div class="mb-3">
-              <a href="<?php echo base_url(); ?>/CategoryBookController/categoryBooks/<?php echo $bookDetails->categoryID; ?>">
+              <a href="<?php echo base_url(); ?>CategoryBookController/categoryBooks/<?php echo $bookDetails->categoryID; ?>">
                 <span class="badge purple mr-1"><?php echo $bookDetails->categoryName; ?></span>
               </a>
               <a href="">
@@ -65,15 +65,18 @@
             <!-- <p class="lead font-weight-bold">Description</p> -->
 
             <p><?php echo $bookDetails->bookDescription; ?></p>
+            
+ <?php $attributes = array('class' => 'd-flex justify-content-left'); $hidden = array('bookID' => $bookDetails->bookID, 'bookPrice' => $bookDetails->bookPrice, 'bookTitle' => $bookDetails->bookTitle, 'redirectTo' => 'BookDetailsController/BookDetails/'.$bookDetails->bookID);
+                echo form_open('CartController/addBookToCart', $attributes, $hidden);  ?>
 
-            <form class="d-flex justify-content-left">
               <!-- Default input -->
-              <input type="number" value="1" aria-label="Search" class="form-control" style="width: 100px">
+              <input type="number" value="1" min="1" aria-label="Search" name="qty" class="form-control" style="width: 100px">
+              
               <button class="btn btn-primary btn-md my-0 p" type="submit">Add to cart
                 <i class="fa fa-shopping-cart ml-1"></i>
               </button>
 
-            </form>
+              <?php echo form_close() ?>
 
           </div>
           <!--Content-->

@@ -62,7 +62,7 @@
         <!-- Left -->
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link waves-effect" href="<?php echo base_url(); ?>/HomeController">Home
+            <a class="nav-link waves-effect" href="<?php echo base_url(); ?>HomeController">Home
               <!-- <span class="sr-only">(current)</span> -->
             </a>
           </li>
@@ -80,8 +80,8 @@
         <!-- Right -->
         <ul class="navbar-nav nav-flex-icons">
           <li class="nav-item">
-            <a class="nav-link waves-effect">
-              <span class="badge red z-depth-1 mr-1"> 0 </span>
+            <a href="<?php echo base_url(); ?>CartController/viewCart" class="nav-link waves-effect">
+              <span class="badge red z-depth-1 mr-1"><?php echo $this->cart->total_items(); ?></span>
               <i class="fa fa-shopping-cart"></i>
               <span class="clearfix d-none d-sm-inline-block"> Cart </span>
             </a>
