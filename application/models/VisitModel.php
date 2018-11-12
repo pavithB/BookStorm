@@ -27,5 +27,26 @@ class VisitModel extends CI_Model {
         //         print ("/////////////");
         // }
     }
+
+    
+
+    //retrieve book viewed count by book id
+    public function getBookViewCount($bookID){
+        $query = $this->db->query("SELECT * FROM visit WHERE bookID=".$bookID);
+        return $query->num_rows();
+    }
+   
+    //retrieve user count by book id
+    public function getBookViewUserCount($bookID){
+        $query = $this->db->query("SELECT bookID, userID FROM visit WHERE bookID = ".$bookID." GROUP BY userID");
+        return $query->num_rows();
+    }
+    
+    //retrieve last viewed book details by book id
+    public function getBookLastView($bookID){
+        $query = $this->db->query("SELECT timestamp FROM visit WHERE bookID=$bookID ORDER BY visitID DESC LIMIT 1");
+        return $query->row();
+    }
+    
 }
 ?>

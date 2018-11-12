@@ -1,13 +1,16 @@
 
-<section style="margin-top: 12vh!important;    min-height: calc(100vh - 41.1vh);" class="team-section text-center my-5">
+<section style="margin-top: 12vh!important;     min-height: calc(100vh - 41.1vh);" class="team-section text-center my-5">
 
 <!-- Section heading -->
-<h2 class="h1-responsive font-weight-bold my-5"><?php echo $category->categoryName ;?> Genre</h2>
-<!-- Section heading -->
+<div>
+<?php if($searchResult) { ?>
+<h4 class="h5-responsive  my-5">Showing results for *<b><?php echo $searchKeyword;?></b>*</h4>
+<?php } else { ?>
+  <h4 class="h5-responsive  my-5"> No results for *<b><?php echo $searchKeyword;?></b>*</h4>
+  <?php } ?>
 
-<!-- Section description -->
-<p class="grey-text w-responsive mx-auto mb-5"><?php echo $category->categoryDescription ;?></p>
-<!-- Section description -->
+</div>
+<!-- Section heading -->
   <!--Main layout-->
   <main>
     <div class="container">
@@ -17,8 +20,7 @@
 
         <!--Grid row-->
         <div class="row wow fadeIn">
-        <?php  if($categoryBooks){ ?>
-            <?php foreach($categoryBooks as $book) { ?>
+            <?php foreach($searchResult as $book) { ?>
           <!--Grid column-->
           <div class="col-lg-3 col-md-6 mb-4">
 
@@ -79,10 +81,12 @@
               <span class="float-left font-weight-bold">
                 <strong><?php echo $book->bookPrice; ?>$</strong>
               </span>
+
               <?php if (isset($this->session->userdata['isAdmin']) && ($this->session->userdata['isAdmin'])) { ?>
              
 
-              <?php }else{ ?>
+             <?php }else{ ?>
+
               <?php $hidden = array('bookID' => $book->bookID, 'bookPrice' => $book->bookPrice, 'bookTitle' => $book->bookTitle, 'redirectTo' => 'CategoryBookController/categoryBooks/'.$book->categoryID);
                 echo form_open('CartController/addBookToCart', '', $hidden);  ?>
               <span style="display:flex" class="float-right">
@@ -90,7 +94,8 @@
                   <button style="margin: 0px; padding: 0px; background: none!important; box-shadow: 0px 0px 0px transparent; border: 0px solid transparent; text-shadow: 0px 0px 0px transparent; cursor: pointer;" type="submit"><i sttyle="font-size: 17px;" class="fa fa-shopping-cart grey-text ml-3"></i></button>
               </span>
               <?php echo form_close() ?>
-              <?php } ?>
+
+              <?php }?>
             </div>
 
 
@@ -104,12 +109,6 @@
           <!--Grid column-->
             <?php } ?>
 
-              <?php }else{ ?>
-<p class="grey-text w-responsive mx-auto mb-5">-------sorry!, no books under this genre------</p>
-            <?php } ?>
-
-
-
         </div>
         <!--Grid row-->
 
@@ -120,7 +119,7 @@
       <!--Pagination-->
       <nav class="d-flex justify-content-center wow fadeIn">
         <ul class="pagination pg-blue">
-        <?php echo $links; ?>
+        <!-- <?php echo $links; ?> -->
         </ul>
       </nav>
       <!--Pagination-->

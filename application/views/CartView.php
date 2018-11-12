@@ -1,4 +1,4 @@
-<main class="mt-5 pt-4">
+<main style = "min-height: calc(100vh - 14.1vh);" class="mt-5 pt-4">
 
     <!-- Main Container -->
     <div class="container cart-v1">
@@ -6,6 +6,9 @@
       <section class="section my-5 pb-5">
 
         <!-- Shopping Cart table -->
+
+       <?php if($this->cart->contents()){ ?>
+
         <div class="table-responsive">
 
           <table class="table product-table">
@@ -97,7 +100,12 @@
           </table>
 
         </div>
+
         <!-- Shopping Cart table -->
+        <?php }else{ ?>  
+
+<h3 style="text-align:center" class="h3-responsive font-weight-bold my-5">--------cart is empty,-------</h3>
+                <?php }?>  
 
       </section>
 

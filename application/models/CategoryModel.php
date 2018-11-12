@@ -11,6 +11,17 @@ class CategoryModel extends CI_Model {
         return $query;
 
     }
+    
+    public function insertNewCategory($categoryName, $categoryDescription, $bookCoverPath) {
+
+        $data = array(
+            'categoryName' => $categoryName,
+            'categoryDescription' => $categoryDescription,
+            'categoryCover' => $bookCoverPath);
+            
+        $query = $this->db->insert('category', $data);
+    }
+
 
     public function getCategoryByID($categoryID) {
 

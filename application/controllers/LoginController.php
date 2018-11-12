@@ -63,7 +63,9 @@ class LoginController extends CI_Controller{
 
     $this->session->set_userdata('adminData', $session_data);
     $this->session->set_userdata('isAdmin', true);
-    $this->load->view('admin_page');
+
+    redirect( 'AdminController', 'location');
+    
     }
     } else {
     $data = array(
@@ -75,10 +77,23 @@ class LoginController extends CI_Controller{
     $this->load->view('partials/footer');
 
     }
-    echo "validation done";
     }
     
     }
+
+    public function logOut(){
+
+            // Removing session data
+            $sess_array = array(
+            'username' => ''
+            );
+            $this->session->unset_userdata('adminData', $sess_array);
+            $this->session->set_userdata('isAdmin', false);
+            // $data['message_display'] = 'Successfully Logout';
+            // $this->load->view('login_form', $data);
+            redirect( "HomeController", 'location'); 
+            }
+    
     
 
     

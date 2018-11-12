@@ -22,6 +22,21 @@ class HomeController extends CI_Controller{
         $this->load->view('partials/footer');
     }
 
+
+    public function search(){
+
+        $searchKeyword = $this->input->post('search');
+        $data['searchKeyword'] = $searchKeyword;
+        $this->load->model('BookModel');
+        $data['searchResult'] = $this->BookModel->getSearchResult($searchKeyword);
+        $this->load->view('partials/header');
+        $this->load->view('SearchView',$data);
+        $this->load->view('partials/footer');
+
+
+
+    }
+
     
 }
 

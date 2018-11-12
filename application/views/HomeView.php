@@ -88,7 +88,7 @@
 
       <!--First slide-->
       <div class="carousel-item active">
-        <div class="view" style="background-image: url('<?php echo base_url(); ?>application/libraries/img/carousel/c1.jpg'); background-repeat: no-repeat; background-size: cover;">
+        <div class="view" style="background-image: url('<?php echo base_url(); ?>assets/images/carousel/c1.jpg'); background-repeat: no-repeat; background-size: cover;">
 
           <!-- Mask & flexbox options-->
           <div class="mask rgba-black-strong d-flex justify-content-center align-items-center">
@@ -96,20 +96,20 @@
             <!-- Content -->
             <div class="text-center white-text mx-5 wow fadeIn">
               <h1 class="mb-4">
-                <strong>Read Books and gain knowledge</strong>
+                <strong>LOOKING FOR YOUR NEXT READ?</strong>
               </h1>
 
-              <p>
+              <!-- <p>
                 <strong>Best books from one roof</strong>
-              </p>
+              </p> -->
 
               <p class="mb-4 d-none d-md-block">
-                <strong>eac all and every piece of books what you ever need from us , buy or wy or why.</strong>
+                <strong>Get personalized recommendations based on books you already love</strong>
               </p>
 
-              <a target="_blank" href="#" class="btn btn-outline-white btn-lg">View All Categories
+              <!-- <a target="_blank" href="#" class="btn btn-outline-white btn-lg">View All Categories
                 <i class="fa fa-graduation-cap ml-2"></i>
-              </a>
+              </a> -->
             </div>
             <!-- Content -->
 
@@ -122,7 +122,7 @@
 
       <!--Second slide-->
       <div class="carousel-item">
-        <div class="view" style="background-image: url('<?php echo base_url(); ?>application/libraries/img/carousel/c2.jpg'); background-repeat: no-repeat; background-size: cover;">
+        <div class="view" style="background-image: url('<?php echo base_url(); ?>assets/images/carousel/c2.jpg'); background-repeat: no-repeat; background-size: cover;">
 
           <!-- Mask & flexbox options-->
           <div class="mask rgba-black-strong d-flex justify-content-center align-items-center">
@@ -152,7 +152,7 @@
 
       <!--Third slide-->
       <div class="carousel-item">
-        <div class="view" style="background-image: url('<?php echo base_url(); ?>application/libraries/img/carousel/c3.jpg'); background-repeat: no-repeat; background-size: cover;">
+        <div class="view" style="background-image: url('<?php echo base_url(); ?>assets/images/carousel/c3.jpg'); background-repeat: no-repeat; background-size: cover;">
 
           <!-- Mask & flexbox options-->
           <div class="mask rgba-black-strong d-flex justify-content-center align-items-center">
@@ -160,11 +160,11 @@
             <!-- Content -->
             <div class="text-center white-text mx-5 wow fadeIn">
               <h1 class="mb-4">
-                <strong>30% off for action books</strong>
+                <strong>LOOKING FOR YOUR NEXT READ?</strong>
               </h1>
 
               <p>
-                <strong>orders above rs.1000 , discounts upto rs.1000 </strong>
+                <strong>Get personalized recommendations based on books you already love</strong>
               </p>
 
               <!-- <p class="mb-4 d-none d-md-block">
@@ -172,9 +172,9 @@
                   available. Create your own, stunning website.</strong>
               </p> -->
 
-              <a target="_blank" href="#" class="btn btn-outline-white btn-lg">Start free tutorial
+              <!-- <a target="_blank" href="#" class="btn btn-outline-white btn-lg">Start free tutorial
                 <i class="fa fa-graduation-cap ml-2"></i>
-              </a>
+              </a> -->
             </div>
             <!-- Content -->
 
