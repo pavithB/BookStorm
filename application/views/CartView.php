@@ -45,7 +45,7 @@
                 <?php echo form_hidden($i.'[rowid]', $book['rowid']); ?>
               <tr>
                 <th scope="row">
-                  <img src="<?php echo base_url(); ?>application/libraries/img/bookcovers/<?php echo $book['id']; ?>.jpg" alt="" class="img-fluid z-depth-0">
+                  <img src="<?php echo base_url(); ?>assets/images/bookCovers/<?php echo $book['bookCover']; ?>" alt="" class="img-fluid z-depth-0">
                 </th>
                 <td>
                   <h5 class="mt-3">

@@ -219,7 +219,7 @@
                     <div class="card collection-card z-depth-1-half card wow fadeIn">
                       <!-- Card image -->
                       <div class="view zoom">
-                        <img src="<?php echo base_url(); ?>application/libraries/img/category/<?php echo $Category->categoryName; ?>.jpg" class="img-fluid" alt="">
+                        <img src="<?php echo base_url(); ?>assets/images/categoryCovers/<?php echo $Category->categoryCover; ?>" class="img-fluid" alt="">
                          <?php echo '<div class="' . (++$count%2 ? "stripe dark" : "stripe light") . '">' ?>
                           <a href="<?php echo base_url(); ?>CategoryBookController/categoryBooks/<?php echo $Category->categoryID; ?>">
                             <p><?php echo $Category->categoryName; ?>

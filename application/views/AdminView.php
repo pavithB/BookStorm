@@ -3,10 +3,6 @@
   <div style='min-height: calc(100vh - 5.6vh);justify-content: center;    padding: 0px;
     margin: 0px;' class="row">
 
-
-
-
-    <!-- // ddddddddddddddddddddddddd -->
     <div style="padding-top: 10%; padding-bottom: 8%;" class="col-lg-8 col-md-10">
 
 
@@ -74,7 +70,7 @@
                           <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
                         </div>
                         <div class="custom-file">
-                          <input type="file" class="custom-file-input" name="userfile" id="inputGroupFile01"
+                          <input type="file" size="20" class="custom-file-input" name="userfile" id="inputGroupFile01"
                             aria-describedby="inputGroupFileAddon01">
                           <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                         </div>
@@ -86,7 +82,7 @@
                   <!-- Grid row -->
                   <div class="form-group row">
                     <div class="col-sm-10">
-                      <button type="submit" class="btn btn-primary btn-md waves-effect waves-light">add</button>
+                      <button type="submit" value="upload" class="btn btn-primary btn-md waves-effect waves-light">add</button>
                     </div>
                   </div>
                   <!-- Grid row -->

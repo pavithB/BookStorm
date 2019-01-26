@@ -62,7 +62,6 @@ class AdminController extends CI_Controller{
     
     public function addNewCategory(){
 
-        // $abc = $this->uploadImage();
 
         if((isset($this->session->userdata['isAdmin']) && ($this->session->userdata['isAdmin']))){
 
@@ -70,9 +69,8 @@ class AdminController extends CI_Controller{
                     $categoryName = $this->input->post('cName');
                     $categoryDescription = $this->input->post('cDescription');
 
-
-                    // $bookCoverPath = $this->uploadImage();
-                    $bookCoverPath = 'defaultCategory.jpg';
+                    $bookCoverPath = 'defaultCategory.png';
+                    $bookCoverPath = $this->uploadImage("categoryCovers");
 
                     $this->load->model('CategoryModel');
 
@@ -145,7 +143,6 @@ class AdminController extends CI_Controller{
 
     public function addNewBook(){
 
-        // $abc = $this->uploadImage();
 
         if((isset($this->session->userdata['isAdmin']) && ($this->session->userdata['isAdmin']))){
 
@@ -158,8 +155,8 @@ class AdminController extends CI_Controller{
                     $bookRating = $this->input->post('bRating');
 
 
-                    $bookCoverPath = $this->uploadImage();
-                    $bookCoverPath = 'default.jpg';
+                    $bookCoverPath = 'image-not-available.jpg';
+                    $bookCoverPath = $this->uploadImage("bookCovers");
 
                     $this->load->model('BookModel');
 
@@ -178,59 +175,42 @@ class AdminController extends CI_Controller{
 
     }
 
-
-//     public function uploadImage()
-//     {
-//             $config['upload_path']          = './assets/';
-//             $config['allowed_types']        = 'gif|jpg|png';
-//             $config['max_size']             = 100;
-//             $config['max_width']            = 2048;
-//             $config['max_height']           = 2048;
-
-//             $this->load->library('upload', $config);
-
-//             if ( ! $this->upload->do_upload('userfile'))
-//             {
-//                     $error = array('error' => $this->upload->display_errors());
-// echo 'error';
-//                     $this->load->view('upload_form', $error);
-//             }
-//             else
-//             {
-//                     $data = array('upload_data' => $this->upload->data());
-
-//                     echo $data['upload_data'];
-//             }
-//     }
-
-public function uploadImage(){
-    $config = array();
-    $config['upload_path'] = '../assets/images';
+public function uploadImage($type){
+    // $config = array();
+    $config['upload_path'] = './assets/images/'.$type;
     $config['allowed_types'] = 'gif|jpg|png|jpeg|JPG';
     $config['max_size'] = '4096';
-    $config['max_width'] = '1024';
-    $config['max_height'] = '768';
+    $config['max_width'] = '2080';
+    $config['max_height'] = '1600';
+    $config['encrypt_name'] = TRUE;
 
-    $this->load->library('upload', $config);
     $this->upload->initialize($config);
+    $this->load->library('upload', $config);
 
     // $image = null;
 
-    if (!$this->upload->do_upload('userfile')) { 
+    if (!$this->upload->do_upload()) { 
         $errors = array('error' => $this->upload->display_errors());
     } else {
-        $data = array('upload_data' => $this->upload->data());
-        $image = $_FILES['userfile']['name'];
+        // $data = array('upload_data' => $this->upload->data());
+        // $image = $_FILES['userfile']['name'];
+
+        $upload_data = $this->upload->data();
+        $image = $upload_data['file_name'];
     }
 
-    if ($image == null) {
+    if (empty($image) ||$image == null) {
         $ImageUrl = 'image-not-available.jpg';
+        if($type == 'categoryCovers'){
+            $ImageUrl = 'defaultCategory.png';
+        }else{
+            $ImageUrl = 'image-not-available.jpg';
+        }
+
     } else {
         $ImageUrl = $image;
     }
     return $ImageUrl;
-
-
 }
 
 

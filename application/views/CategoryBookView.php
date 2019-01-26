@@ -27,7 +27,7 @@
 
               <!--Card image-->
               <div style="padding:5px" class="view overlay">
-                <img src="<?php echo base_url(); ?>application/libraries/img/bookcovers/<?php echo $book->bookID; ?>.jpg" class="card-img-top" alt="">
+                <img src="<?php echo base_url(); ?>assets/images/bookCovers/<?php echo $book->bookCover; ?>" class="card-img-top" alt="">
                 <a href="<?php echo base_url(); ?>BookDetailsController/BookDetails/<?php echo $book->bookID; ?>">
                   <div class="mask rgba-white-slight"></div>
                 </a>
@@ -83,7 +83,7 @@
              
 
               <?php }else{ ?>
-              <?php $hidden = array('bookID' => $book->bookID, 'bookPrice' => $book->bookPrice, 'bookTitle' => $book->bookTitle, 'redirectTo' => 'CategoryBookController/categoryBooks/'.$book->categoryID);
+              <?php $hidden = array('bookID' => $book->bookID, 'bookPrice' => $book->bookPrice, 'bookTitle' => $book->bookTitle, 'bookCover' => $book->bookCover, 'redirectTo' => 'CategoryBookController/categoryBooks/'.$book->categoryID);
                 echo form_open('CartController/addBookToCart', '', $hidden);  ?>
               <span style="display:flex" class="float-right">
                   <input type="number" min="1" value="1" aria-label="Search" name="qty" class="form-control" style="width: 45px; padding: 5px 0px 5px 8px; height: 25px; margin-left: 15px;">

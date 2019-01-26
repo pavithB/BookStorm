@@ -9,7 +9,7 @@
         <!--Grid column-->
         <div style="text-align: center; padding-top: 5%;" class="col-md-6 mb-4">
 
-          <img src="<?php echo base_url(); ?>application/libraries/img/bookcovers/<?php echo $bookDetails->bookID; ?>.jpg" class="img-fluid" alt="">
+          <img src="<?php echo base_url(); ?>assets/images/bookCovers/<?php echo $bookDetails->bookCover; ?>" class="img-fluid" alt="">
 
         </div>
         <!--Grid column-->
@@ -108,7 +108,7 @@
 
             <?php }else { ?>
 
-             <?php $attributes = array('class' => 'd-flex justify-content-left'); $hidden = array('bookID' => $bookDetails->bookID, 'bookPrice' => $bookDetails->bookPrice, 'bookTitle' => $bookDetails->bookTitle, 'redirectTo' => 'BookDetailsController/BookDetails/'.$bookDetails->bookID);
+             <?php $attributes = array('class' => 'd-flex justify-content-left'); $hidden = array('bookID' => $bookDetails->bookID, 'bookPrice' => $bookDetails->bookPrice, 'bookTitle' => $bookDetails->bookTitle, 'bookCover' => $bookDetails->bookCover, 'redirectTo' => 'BookDetailsController/BookDetails/'.$bookDetails->bookID);
                 echo form_open('CartController/addBookToCart', $attributes, $hidden);  ?>
 
               <!-- Default input -->
@@ -165,7 +165,7 @@
 
               <!--Card image-->
               <div style="padding:5px" class="view overlay">
-                <img style="min-width:160px ; min-height: 250px;" src="<?php echo base_url(); ?>application/libraries/img/bookcovers/<?php echo $recomendation->bookID; ?>.jpg" class="card-img-top" alt="">
+                <img style="min-width:160px ; min-height: 250px;" src="<?php echo base_url(); ?>assets/images/bookCovers/<?php echo $recomendation->bookCover; ?>" class="card-img-top" alt="">
                 <a href="<?php echo base_url(); ?>BookDetailsController/BookDetails/<?php echo $recomendation->bookID; ?>">
                   <div class="mask rgba-white-slight"></div>
                 </a>
@@ -221,7 +221,7 @@
                            
 
               <?php }else{ ?>
-              <?php $hidden = array('bookID' => $recomendation->bookID, 'bookPrice' => $recomendation->bookPrice, 'bookTitle' => $recomendation->bookTitle, 'redirectTo' => 'CategoryBookController/categoryBooks/'.$recomendation->categoryID);
+              <?php $hidden = array('bookID' => $recomendation->bookID, 'bookPrice' => $recomendation->bookPrice, 'bookTitle' => $recomendation->bookTitle, 'bookCover' => $recomendation->bookCover, 'redirectTo' => 'BookDetailsController/BookDetails/'.$bookDetails->bookID);
                 echo form_open('CartController/addBookToCart', '', $hidden);  ?>
               <span style="display:flex" class="float-right">
                   <input type="number" min="1" value="1" aria-label="Search" name="qty" class="form-control" style="width: 45px; padding: 5px 0px 5px 8px; height: 25px; margin-left: 15px;">

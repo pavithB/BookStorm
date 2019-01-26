@@ -6,16 +6,16 @@ class CartController extends CI_Controller{
         // echo $this->input->post('redirectTo');
         $data = array(
 
-        'id'      => $this->input->post('bookID'),
-        'qty'     => $this->input->post('qty'),
-        'price'   => $this->input->post('bookPrice'),
-        'name'    => $this->input->post('bookTitle'),
+        'id'       => $this->input->post('bookID'),
+        'qty'      => $this->input->post('qty'),
+        'price'    => $this->input->post('bookPrice'),
+        'name'     => $this->input->post('bookTitle'),
+        'bookCover'=> $this->input->post('bookCover'),
 
     );
     
     $this->cart->insert($data);
 
-    // $this->cart->destroy();
     
     redirect( $this->input->post('redirectTo'), 'location');
 
@@ -53,7 +53,6 @@ class CartController extends CI_Controller{
     $this->load->view('partials/footer');
     }
 
-    // echo $this->cart->total_items();
 
 
         // $this->load->model('BookModel');
