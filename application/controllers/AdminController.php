@@ -160,7 +160,7 @@ class AdminController extends CI_Controller{
 
                     $this->load->model('BookModel');
 
-                    $this->BookModel->insertNewBook($bookTitle, $bookDescription, $bookCoverPath, $bookPrice, $bookAuthor, $bookCategory);
+                    $this->BookModel->insertNewBook($bookTitle, $bookDescription, $bookCoverPath, $bookPrice, $bookAuthor, $bookCategory, $bookRating);
 
                     // redirect to admin add book page
                     redirect('AdminController', 'location');

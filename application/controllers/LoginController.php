@@ -24,11 +24,20 @@ class LoginController extends CI_Controller{
         // $data['allCategory'] = $this->CategoryModel->getAllCategory()->result();
         // $data=$this->CategoryModel->getAllCategory();
         // $books['allCategory']  = $data->result();
+        if (isset($this->session->userdata['isAdmin']) && ($this->session->userdata['isAdmin'])) {
+            $this->load->model('CategoryModel');
 
+            $data['categories'] = $this->CategoryModel->getAllCategory()->result();
+
+            $this->load->view('partials/header');
+            $this->load->view('AdminView',$data);
+            $this->load->view('partials/footer');
+        }else{
 
         $this->load->view('partials/header');
         $this->load->view('LoginView');
         $this->load->view('partials/footer');
+        }
     }
 
     public function adminLogin(){

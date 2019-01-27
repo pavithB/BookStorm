@@ -39,8 +39,8 @@
                     <label for="name" class="col-sm-4 col-form-label">Category Name</label>
                     <div class="col-sm-8">
                       <div class="md-form">
-                        <input id="input-char-counter" name="cName" type="text" length="100" class="form-control">
-                        <label for="input-char-counter">ex: comic/Biography</label>
+                        <input id="new-category-name" name="cName" type="text" length="100" class="form-control">
+                        <label for="new-category-name">ex: comic/Biography</label>
                       </div>
                     </div>
                   </div>
@@ -52,9 +52,9 @@
                     <label for="inputPassword3MD" class="col-sm-4 col-form-label">Category Description</label>
                     <div class="col-sm-8">
                       <div class="md-form">
-                        <textarea name="cDescription" id="textarea-char-counter" class="form-control md-textarea"
+                        <textarea name="cDescription" id="new-category-description" class="form-control md-textarea"
                           length="2000" rows="3"></textarea>
-                        <label for="textarea-char-counter">Type your text</label>
+                        <label for="new-category-description">Type your text</label>
                       </div>
                     </div>
                   </div>
@@ -63,16 +63,16 @@
                   <!-- Grid row -->
                   <div class="form-group row">
                     <!-- Material input -->
-                    <label for="inputPassword3MD" class="col-sm-4 col-form-label">Category Cover Photo</label>
+                    <label for="new-category-upload" class="col-sm-4 col-form-label">Category Cover Photo</label>
                     <div class="col-sm-8">
                       <div class="input-group">
                         <div class="input-group-prepend">
                           <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
                         </div>
                         <div class="custom-file">
-                          <input type="file" size="20" class="custom-file-input" name="userfile" id="inputGroupFile01"
+                          <input type="file" size="20" class="custom-file-input" name="userfile" id="new-category-upload"
                             aria-describedby="inputGroupFileAddon01">
-                          <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                          <label class="custom-file-label" for="new-category-upload">Choose file</label>
                         </div>
                       </div>
                     </div>
@@ -124,8 +124,8 @@
                     <label for="name" class="col-sm-4 col-form-label">Book Title</label>
                     <div class="col-sm-8">
                       <div class="md-form">
-                        <input id="input-char-counter" name="bTitle" type="text" length="100" class="form-control">
-                        <label for="input-char-counter">enter book title</label>
+                        <input id="new-book-title" name="bTitle" type="text" length="100" class="form-control">
+                        <label for="new-book-title">enter book title</label>
                       </div>
                     </div>
                   </div>
@@ -137,9 +137,9 @@
                     <label for="inputPassword3MD" class="col-sm-4 col-form-label">Book Description</label>
                     <div class="col-sm-8">
                       <div class="md-form">
-                        <textarea name="bDescription" id="textarea-char-counter" class="form-control md-textarea"
+                        <textarea name="bDescription" id="new-book-description" class="form-control md-textarea"
                           length="2000" rows="3"></textarea>
-                        <label for="textarea-char-counter">do not exceed 1000 characters</label>
+                        <label for="new-book-description">do not exceed 1000 characters</label>
                       </div>
                     </div>
                   </div>
@@ -151,8 +151,8 @@
                     <label for="name" class="col-sm-4 col-form-label">Book Author</label>
                     <div class="col-sm-8">
                       <div class="md-form">
-                        <input id="input-char-counter" name="bAuthor" type="text" length="100" class="form-control">
-                        <label for="input-char-counter">enter book Author name</label>
+                        <input id="new-book-author" name="bAuthor" type="text" length="100" class="form-control">
+                        <label for="new-book-author">enter book Author name</label>
                       </div>
                     </div>
                   </div>
@@ -164,8 +164,8 @@
                     <label for="name" class="col-sm-4 col-form-label">Book Price</label>
                     <div class="col-sm-8">
                       <div class="md-form">
-                        <input id="input-char-counter" name="bPrice" type="text" length="100" class="form-control">
-                        <label for="input-char-counter">enter book Price</label>
+                        <input id="new-book-price" name="bPrice" type="number" min="1" step="any" length="100" class="form-control">
+                        <label for="new-book-price">enter book Price</label>
                       </div>
                     </div>
                   </div>
@@ -178,9 +178,7 @@
                     <div class="col-sm-8">
                       <div class="d-flex justify-content-center my-4">
                         <span class="font-weight-bold indigo-text mr-2 mt-1">0</span>
-
                         <input class="border-0" name="bRating" type="range" min="0" max="5" />
-
                         <span class="font-weight-bold indigo-text ml-2 mt-1">5</span>
                       </div>
                     </div>
@@ -205,16 +203,16 @@
                   <!-- Grid row -->
                   <div class="form-group row">
                     <!-- Material input -->
-                    <label for="inputPassword3MD" class="col-sm-4 col-form-label">Category Cover Photo</label>
+                    <label for="new-book-upload" class="col-sm-4 col-form-label">Book Cover Photo</label>
                     <div class="col-sm-8">
                       <div class="input-group">
                         <div class="input-group-prepend">
                           <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
                         </div>
                         <div class="custom-file">
-                          <input type="file" class="custom-file-input" name="userfile" id="inputGroupFile01"
+                          <input type="file" class="custom-file-input" name="userfile" id="new-book-upload"
                             aria-describedby="inputGroupFileAddon01">
-                          <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                          <label class="custom-file-label" for="new-book-upload">Choose file</label>
                         </div>
                       </div>
                     </div>

@@ -64,7 +64,7 @@ class BookModel extends CI_Model {
 
     }
 
-    public function insertNewBook($bookTitle, $bookDescription, $bookCoverPath, $bookPrice, $bookAuthor, $bookCategory) {
+    public function insertNewBook($bookTitle, $bookDescription, $bookCoverPath, $bookPrice, $bookAuthor, $bookCategory, $bookRating) {
 
         $data = array(
             'bookTitle' => $bookTitle,
@@ -72,7 +72,8 @@ class BookModel extends CI_Model {
             'bookPrice' => $bookPrice,
             'bookCover' => $bookCoverPath,
             'author'    => $bookAuthor,
-            'categoryID' => $bookCategory);
+            'categoryID' => $bookCategory,
+            'rating' => $bookRating);
         $query = $this->db->insert('book', $data);
     }
 
@@ -90,6 +91,24 @@ class BookModel extends CI_Model {
 
         // echo $query->num_rows();
         return $query->result();
+    }
+
+    public function fetchBooksBySearch($limit, $start, $searchKeyWord){
+
+        $this->db->limit($limit, $start);
+        $this->db->select('*');
+        $this->db->from('book');
+        $this->db->where('book.categoryID', $categoryID);
+        $this->db->join('category', 'category.categoryID = book.categoryID');
+        $query = $this->db->get();
+
+        if ($query->num_rows() > 0) {
+            foreach ($query->result() as $row) {
+                $data[] = $row;
+            }
+            return $data;
+        }
+        return false;
     }
 
    

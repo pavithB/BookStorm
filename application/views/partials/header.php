@@ -79,7 +79,7 @@
   // $lastname = ($this->session->userdata['adminData']['lastname']); ?>
 
           <li class="nav-item">
-            <a class="nav-link waves-effect" href="<?php echo base_url();?>LoginController/logOut">Admin Dashboard</a>
+            <a class="nav-link waves-effect" href="<?php echo base_url();?>AdminController">Admin Dashboard</a>
           </li>
           <?php  }else{  ?>
 
@@ -89,9 +89,9 @@
 
 
           <?php } ?>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link waves-effect" href="#">All Books</a>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a class="nav-link waves-effect" href="#">About Us</a>
           </li>
