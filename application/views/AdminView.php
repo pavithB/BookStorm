@@ -5,7 +5,7 @@
 
     <div style="padding-top: 10%; padding-bottom: 8%;" class="col-lg-8 col-md-10">
 
-
+    <?php echo validation_errors(); ?>
       <!--Form without header-->
       <div style="padding: 90px 20% 90px 20%" class="card">
         <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
@@ -39,7 +39,7 @@
                     <label for="name" class="col-sm-4 col-form-label">Category Name</label>
                     <div class="col-sm-8">
                       <div class="md-form">
-                        <input id="new-category-name" name="cName" type="text" length="100" class="form-control">
+                        <input id="new-category-name" required name="cName" type="text" length="100" class="form-control">
                         <label for="new-category-name">ex: comic/Biography</label>
                       </div>
                     </div>
@@ -52,7 +52,7 @@
                     <label for="inputPassword3MD" class="col-sm-4 col-form-label">Category Description</label>
                     <div class="col-sm-8">
                       <div class="md-form">
-                        <textarea name="cDescription" id="new-category-description" class="form-control md-textarea"
+                        <textarea name="cDescription" required id="new-category-description" class="form-control md-textarea"
                           length="2000" rows="3"></textarea>
                         <label for="new-category-description">Type your text</label>
                       </div>
@@ -70,7 +70,7 @@
                           <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
                         </div>
                         <div class="custom-file">
-                          <input type="file" size="20" class="custom-file-input" name="userfile" id="new-category-upload"
+                          <input type="file" size="20" required class="custom-file-input" name="userfile" id="new-category-upload"
                             aria-describedby="inputGroupFileAddon01">
                           <label class="custom-file-label" for="new-category-upload">Choose file</label>
                         </div>
@@ -85,6 +85,7 @@
                       <button type="submit" value="upload" class="btn btn-primary btn-md waves-effect waves-light">add</button>
                     </div>
                   </div>
+                  <span><strong><?php echo validation_errors(); ?></strong></span>
                   <!-- Grid row -->
                   <?php echo form_close('') ?>
                   <!-- Horizontal material form -->
@@ -124,7 +125,7 @@
                     <label for="name" class="col-sm-4 col-form-label">Book Title</label>
                     <div class="col-sm-8">
                       <div class="md-form">
-                        <input id="new-book-title" name="bTitle" type="text" length="100" class="form-control">
+                        <input id="new-book-title" required name="bTitle" type="text" length="100" class="form-control">
                         <label for="new-book-title">enter book title</label>
                       </div>
                     </div>
@@ -137,7 +138,7 @@
                     <label for="inputPassword3MD" class="col-sm-4 col-form-label">Book Description</label>
                     <div class="col-sm-8">
                       <div class="md-form">
-                        <textarea name="bDescription" id="new-book-description" class="form-control md-textarea"
+                        <textarea name="bDescription" required id="new-book-description" class="form-control md-textarea"
                           length="2000" rows="3"></textarea>
                         <label for="new-book-description">do not exceed 1000 characters</label>
                       </div>
@@ -151,7 +152,7 @@
                     <label for="name" class="col-sm-4 col-form-label">Book Author</label>
                     <div class="col-sm-8">
                       <div class="md-form">
-                        <input id="new-book-author" name="bAuthor" type="text" length="100" class="form-control">
+                        <input id="new-book-author" required name="bAuthor" type="text" length="100" class="form-control">
                         <label for="new-book-author">enter book Author name</label>
                       </div>
                     </div>
@@ -164,7 +165,7 @@
                     <label for="name" class="col-sm-4 col-form-label">Book Price</label>
                     <div class="col-sm-8">
                       <div class="md-form">
-                        <input id="new-book-price" name="bPrice" type="number" min="1" step="any" length="100" class="form-control">
+                        <input id="new-book-price" required name="bPrice" type="number" min="1" step="any" length="100" class="form-control">
                         <label for="new-book-price">enter book Price</label>
                       </div>
                     </div>
@@ -178,7 +179,7 @@
                     <div class="col-sm-8">
                       <div class="d-flex justify-content-center my-4">
                         <span class="font-weight-bold indigo-text mr-2 mt-1">0</span>
-                        <input class="border-0" name="bRating" type="range" min="0" max="5" />
+                        <input class="border-0" required name="bRating" type="range" min="0" max="5" />
                         <span class="font-weight-bold indigo-text ml-2 mt-1">5</span>
                       </div>
                     </div>
@@ -210,7 +211,7 @@
                           <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
                         </div>
                         <div class="custom-file">
-                          <input type="file" class="custom-file-input" name="userfile" id="new-book-upload"
+                          <input type="file" required class="custom-file-input" name="userfile" id="new-book-upload"
                             aria-describedby="inputGroupFileAddon01">
                           <label class="custom-file-label" for="new-book-upload">Choose file</label>
                         </div>
@@ -226,6 +227,7 @@
                     </div>
                   </div>
                   <!-- Grid row -->
+                  <!-- <span><strong><?php echo validation_errors(); ?></strong></span> -->
                   <?php echo form_close('') ?>
                   <!-- Horizontal material form -->
 

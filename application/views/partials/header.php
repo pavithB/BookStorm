@@ -14,6 +14,10 @@
   <link href="<?php echo base_url(); ?>application/libraries/css/mdb.min.css" rel="stylesheet">
   <!-- Your custom styles (optional) -->
   <link href="<?php echo base_url(); ?>application/libraries/css/style.min.css" rel="stylesheet">
+
+  
+	<link rel="icon" type="image/png" href="<?php echo base_url(); ?>assets/images/favicon.png"/>
+  
   <style type="text/css">
     html,
     body,
@@ -92,9 +96,9 @@
           <!-- <li class="nav-item">
             <a class="nav-link waves-effect" href="#">All Books</a>
           </li> -->
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link waves-effect" href="#">About Us</a>
-          </li>
+          </li> -->
         </ul>
 
         <!-- Right -->

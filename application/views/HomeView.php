@@ -137,8 +137,8 @@
                 <strong>this offer valid only in november</strong>
               </p>
 
-              <a target="_blank" href="#" class="btn btn-outline-white btn-lg">Start free tutorial
-                <i class="fa fa-graduation-cap ml-2"></i>
+              <a target="_blank" href="<?php echo base_url(); ?>CategoryBookController/categoryBooks/1" class="btn btn-outline-white btn-lg">check it out!
+                <i class="fa fa-book ml-2"></i>
               </a>
             </div>
             <!-- Content -->
@@ -219,7 +219,8 @@
                     <div class="card collection-card z-depth-1-half card wow fadeIn">
                       <!-- Card image -->
                       <div class="view zoom">
-                        <img src="<?php echo base_url(); ?>assets/images/categoryCovers/<?php echo $Category->categoryCover; ?>" class="img-fluid" alt="">
+                        <img style="
+    max-height: 240px;" src="<?php echo base_url(); ?>assets/images/categoryCovers/<?php echo $Category->categoryCover; ?>" class="img-fluid" alt="">
                          <?php echo '<div class="' . (++$count%2 ? "stripe dark" : "stripe light") . '">' ?>
                           <a href="<?php echo base_url(); ?>CategoryBookController/categoryBooks/<?php echo $Category->categoryID; ?>">
                             <p><?php echo $Category->categoryName; ?>

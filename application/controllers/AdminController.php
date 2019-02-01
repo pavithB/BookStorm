@@ -4,11 +4,6 @@ class AdminController extends CI_Controller{
     public function __construct()
     {
             parent::__construct();
-
-
-
-
-
     }
 
     public function index(){
@@ -24,7 +19,6 @@ class AdminController extends CI_Controller{
 
 
         }else{
-
 
             redirect( 'HomeController', 'location');
         }
@@ -58,8 +52,6 @@ class AdminController extends CI_Controller{
     }
     }
 
-
-    
     public function addNewCategory(){
 
 
